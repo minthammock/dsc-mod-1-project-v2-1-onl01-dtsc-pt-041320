@@ -1509,51 +1509,6 @@ createANewThing(dfFinal2)
 ```
 
 
-    ------------------------------------------------------------------------
-
-    ValueError                             Traceback (most recent call last)
-
-    <ipython-input-30-2af76649627b> in <module>
-         14         plt.tight_layout()
-         15 
-    ---> 16 createANewThing(dfFinal2)
-    
-
-    <ipython-input-30-2af76649627b> in createANewThing(df)
-          6         x = df.loc[df['genresCode'] % genresDict[i] == 0].groupby('primary_name').mean().sort_values('profit', ascending = False).index[:50]
-          7         y = df.loc[df['genresCode'] % genresDict[i] == 0].groupby('primary_name').mean().sort_values('profit', ascending = False)['profit'][:50]
-    ----> 8         ax = sns.barplot(x = x, y = y, ax = plt.subplot(6,4,plotnumber), palette='Blues_d')
-          9         ax.set_title(f'Top 50 {i.title()} Directors', fontdict = {'fontsize':36})
-         10         ax.set_xlabel('Directors Name', fontdict = {'size' : 36})
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in barplot(x, y, hue, data, order, hue_order, estimator, ci, n_boot, units, seed, orient, color, palette, saturation, errcolor, errwidth, capsize, dodge, ax, **kwargs)
-       3148                           estimator, ci, n_boot, units, seed,
-       3149                           orient, color, palette, saturation,
-    -> 3150                           errcolor, errwidth, capsize, dodge)
-       3151 
-       3152     if ax is None:
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in __init__(self, x, y, hue, data, order, hue_order, estimator, ci, n_boot, units, seed, orient, color, palette, saturation, errcolor, errwidth, capsize, dodge)
-       1614         self.establish_variables(x, y, hue, data, orient,
-       1615                                  order, hue_order, units)
-    -> 1616         self.establish_colors(color, palette, saturation)
-       1617         self.estimate_statistic(estimator, ci, n_boot, seed)
-       1618 
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in establish_colors(self, color, palette, saturation)
-        314         # Determine the gray color to use for the lines framing the plot
-        315         light_vals = [colorsys.rgb_to_hls(*c)[1] for c in rgb_colors]
-    --> 316         lum = min(light_vals) * .6
-        317         gray = mpl.colors.rgb2hex((lum, lum, lum))
-        318 
-    
-
-    ValueError: min() arg is an empty sequence
-
-
 
 ![png](output_44_1.png)
 
@@ -1591,51 +1546,6 @@ def createANewThing(df):
 createANewThing(dfFinal3)
 
 ```
-
-
-    ------------------------------------------------------------------------
-
-    ValueError                             Traceback (most recent call last)
-
-    <ipython-input-32-2bd7bedb5472> in <module>
-         19         plotnumber = plotnumber +1
-         20         plt.tight_layout()
-    ---> 21 createANewThing(dfFinal3)
-    
-
-    <ipython-input-32-2bd7bedb5472> in createANewThing(df)
-         12         x = df.loc[df['genresCode'] % genresDict[i] == 0].groupby('primary_name').mean().sort_values('profit', ascending = False).index[:50]
-         13         y = df.loc[df['genresCode'] % genresDict[i] == 0].groupby('primary_name').mean().sort_values('profit', ascending = False)['profit'][:50]
-    ---> 14         ax = sns.barplot(x = x, y = y, ax = plt.subplot(6,4,plotnumber),palette='Reds_d')
-         15         ax.set_title(f'Top 50 {i.title()} Writers',fontdict = {'size' : 36})
-         16         ax.set_xlabel('Writer Name', fontdict = {'size' : 36})
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in barplot(x, y, hue, data, order, hue_order, estimator, ci, n_boot, units, seed, orient, color, palette, saturation, errcolor, errwidth, capsize, dodge, ax, **kwargs)
-       3148                           estimator, ci, n_boot, units, seed,
-       3149                           orient, color, palette, saturation,
-    -> 3150                           errcolor, errwidth, capsize, dodge)
-       3151 
-       3152     if ax is None:
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in __init__(self, x, y, hue, data, order, hue_order, estimator, ci, n_boot, units, seed, orient, color, palette, saturation, errcolor, errwidth, capsize, dodge)
-       1614         self.establish_variables(x, y, hue, data, orient,
-       1615                                  order, hue_order, units)
-    -> 1616         self.establish_colors(color, palette, saturation)
-       1617         self.estimate_statistic(estimator, ci, n_boot, seed)
-       1618 
-    
-
-    C:\ProgramData\Anaconda3\lib\site-packages\seaborn\categorical.py in establish_colors(self, color, palette, saturation)
-        314         # Determine the gray color to use for the lines framing the plot
-        315         light_vals = [colorsys.rgb_to_hls(*c)[1] for c in rgb_colors]
-    --> 316         lum = min(light_vals) * .6
-        317         gray = mpl.colors.rgb2hex((lum, lum, lum))
-        318 
-    
-
-    ValueError: min() arg is an empty sequence
 
 
 
